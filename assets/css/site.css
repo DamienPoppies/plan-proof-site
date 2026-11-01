@@ -2677,3 +2677,4 @@ code {
   }
   .money__price { text-align: left; }
 }
+.money__mark { color: var(--accent); font-weight: 600; }
