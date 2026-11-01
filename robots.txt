@@ -1,0 +1,3 @@
+# Pre-launch: nothing is indexed while the brand name is provisional.
+User-agent: *
+Disallow: /

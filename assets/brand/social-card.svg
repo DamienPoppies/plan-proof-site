@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <rect width="1200" height="630" fill="#fbfaf7"/>
+  <g transform="translate(80 96)">
+    <path d="M0 0v30" stroke="#1b4d3e" stroke-width="3" stroke-linecap="round"/>
+    <path d="M7 21 13 27 27 5" stroke="#1b4d3e" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  </g>
+  <text x="120" y="126" font-family="Manrope, Helvetica, Arial, sans-serif" font-size="26" font-weight="600" fill="#121316" letter-spacing="0.4">Plan &amp; Proof</text>
+  <text x="80" y="330" font-family="Georgia, 'Times New Roman', serif" font-size="82" fill="#121316">AI can build the tool</text>
+  <text x="80" y="424" font-family="Georgia, 'Times New Roman', serif" font-size="82" fill="#121316">your business keeps</text>
+  <text x="80" y="518" font-family="Georgia, 'Times New Roman', serif" font-size="82" fill="#121316">working around.</text>
+  <line x1="80" y1="566" x2="1120" y2="566" stroke="#e2ded4" stroke-width="1"/>
+</svg>
