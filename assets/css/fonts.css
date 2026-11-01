@@ -1,0 +1,26 @@
+/* Self-hosted type. No CDN, no third-party request, no cookie.
+   Files live in /assets/fonts and ship with the site. */
+
+@font-face {
+  font-family: "Manrope";
+  src: url("/assets/fonts/manrope-normal-300-700.woff2") format("woff2");
+  font-weight: 300 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Instrument Serif";
+  src: url("/assets/fonts/instrument-serif-normal-400.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Instrument Serif";
+  src: url("/assets/fonts/instrument-serif-italic-400.woff2") format("woff2");
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
