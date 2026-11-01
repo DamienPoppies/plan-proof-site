@@ -2779,3 +2779,37 @@ code {
   line-height: 1.6;
   color: var(--ink-soft);
 }
+
+/* ---------- Mobile fixes ---------- */
+
+/* Anchors should not land under the sticky header. */
+[id] { scroll-margin-top: 88px; }
+
+@media (max-width: 720px) {
+  /* The ad-page header was forcing a button and a label into 72px, which spilled
+     over the photograph. The hero already carries the call to action. */
+  .landing .site-header .header-cta { display: none; }
+  .landing .landing__meta { display: none; }
+  .site-header .header-inner { height: 64px; }
+
+  /* Hero copy is taller than a 320px photograph on a phone, so let the section
+     grow with the text and keep the image behind it. */
+  .trade-hero { background: #0c0e0d; }
+  .trade-hero__img { position: absolute; inset: 0; height: 100%; }
+  .trade-hero__scrim {
+    background: linear-gradient(180deg, rgba(12,14,13,0.62) 0%, rgba(12,14,13,0.86) 55%, rgba(12,14,13,0.95) 100%);
+  }
+  .trade-hero__inner { position: relative; inset: auto; align-items: stretch; }
+  .trade-hero__copy { padding-block: 56px 40px; max-width: none; }
+  .trade-hero__copy h1 { font-size: 2.125rem; }
+  .trade-hero__copy .btn { width: 100%; justify-content: center; }
+  .img-credit { padding-bottom: 8px; }
+}
+
+/* Four families on wide screens, two on tablets, one on phones. */
+@media (min-width: 1120px) {
+  .families { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: var(--s3); }
+}
+@media (min-width: 640px) and (max-width: 1119px) {
+  .families { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
