@@ -2730,3 +2730,41 @@ code {
   text-decoration: none;
 }
 .link-arrow::after { content: "→"; }
+
+/* Families — what people ask for. Three columns of plain lists. */
+.families {
+  display: grid;
+  gap: var(--s5);
+  margin-top: var(--s4);
+}
+.families__col h3 {
+  margin: 0 0 var(--s2);
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--line-strong);
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  color: var(--accent);
+}
+.families__col ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.families__col li {
+  padding: 10px 0;
+  border-bottom: 1px solid var(--line);
+  font-size: 15px;
+  line-height: 1.45;
+  color: var(--ink-soft);
+}
+.families__note {
+  margin: var(--s3) 0 0;
+  max-width: 62ch;
+  font-size: 13px;
+  line-height: 1.6;
+  color: var(--ink-faint);
+}
+@media (min-width: 860px) {
+  .families { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--s4); }
+}
