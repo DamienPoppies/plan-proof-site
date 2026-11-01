@@ -11,8 +11,10 @@
     <meta name="robots" content="noindex, nofollow, noarchive, nosnippet" />
     <meta name="theme-color" content="#ffffff" />
     <link rel="icon" href="favicon.svg" type="image/svg+xml" />
-    <link rel="apple-touch-icon" href="favicon.svg" />
+    <link rel="apple-touch-icon" href="assets/brand/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="192x192" href="assets/brand/icon-192.png" />
     <link rel="stylesheet" href="assets/css/site.css" />
+    <meta property="og:url" content="https://damienpoppies.github.io/plan-proof-site/" />
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="Plan &amp; Proof" />
     <meta property="og:title" content="AI built for the way your business already works" />
@@ -20,19 +22,101 @@
       property="og:description"
       content="Upload the plan. Get the line items. Send the quote. Free 30-minute call, one-page plan within 24 hours."
     />
-    <meta property="og:image" content="assets/brand/social-card.svg" />
+    <meta property="og:image" content="https://damienpoppies.github.io/plan-proof-site/assets/brand/social-card.png" />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Plan &amp; Proof — a written plan, a fixed price, a working first version." />
     <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:image" content="https://damienpoppies.github.io/plan-proof-site/assets/brand/social-card.png" />
     <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@type": "ProfessionalService",
-        "name": "Plan & Proof",
-        "description": "A small practice that helps business owners work out which tool is worth building with AI, then builds the first working version with their team.",
-        "areaServed": "AU",
-        "knowsAbout": ["AI tool development", "small business operations", "workflow design"],
-        "disambiguatingDescription": "Plan & Proof is a working name and is not yet registered."
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "#org",
+      "name": "Plan & Proof",
+      "url": "/",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "/assets/brand/icon-512.png",
+        "width": 512,
+        "height": 512
+      },
+      "image": "/assets/brand/social-card.png",
+      "description": "A small practice that works out which tool is worth building, then builds the first working version with the owner and team.",
+      "areaServed": {
+        "@type": "Country",
+        "name": "Australia"
+      },
+      "disambiguatingDescription": "Plan & Proof is a working name and is not yet registered."
+    },
+    {
+      "@type": "WebSite",
+      "@id": "#site",
+      "url": "/",
+      "name": "Plan & Proof",
+      "publisher": {
+        "@id": "#org"
+      },
+      "inLanguage": "en-AU"
+    },
+    {
+      "@type": "ProfessionalService",
+      "@id": "#service",
+      "name": "Plan & Proof",
+      "provider": {
+        "@id": "#org"
+      },
+      "areaServed": {
+        "@type": "Country",
+        "name": "Australia"
+      },
+      "serviceType": "Custom business tool development",
+      "knowsAbout": [
+        "small business operations",
+        "workflow design",
+        "quoting and estimating automation",
+        "cashflow and reporting tools",
+        "policy and compliance registers",
+        "integration with accounting and job management systems"
+      ],
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Ways to work",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Written plan",
+              "description": "One job scoped in writing: what gets built, what it costs, when it lands and how it will be judged."
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "First stage build",
+              "description": "One job, built small and handed over in weeks with a fixed price agreed before work starts."
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Staged rollout",
+              "description": "Further stages scoped and priced only once the previous stage is in daily use."
+            }
+          }
+        ]
       }
+    }
+  ]
+}
     </script>
+      <link rel="canonical" href="https://damienpoppies.github.io/plan-proof-site/" />
   </head>
   <body>
     <a class="skip-link" href="#main">Skip to content</a>
