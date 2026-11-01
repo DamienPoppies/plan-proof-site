@@ -2168,6 +2168,28 @@ section.tint {
   font-size: 0.9375rem;
 }
 
+.btn--book {
+  justify-self: center;
+  margin-block: var(--s5) var(--s3);
+  padding: 1.05rem 2rem;
+  font-size: 1rem;
+}
+
+.book-fallback {
+  max-width: 44ch;
+  margin-inline: auto;
+  text-align: center;
+  font-size: 0.875rem;
+  line-height: 1.6;
+  color: var(--ink-soft);
+}
+
+.book-fallback a {
+  color: var(--ink);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
 .book-when span {
   font-size: 0.875rem;
   color: var(--ink-soft);
