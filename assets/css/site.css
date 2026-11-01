@@ -2813,3 +2813,31 @@ code {
 @media (min-width: 640px) and (max-width: 1119px) {
   .families { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
+
+/* Systems we connect to — names, not borrowed logos. */
+ul.systems {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: var(--s4) 0 0;
+  padding: 0;
+  list-style: none;
+}
+ul.systems li {
+  padding: 9px 16px;
+  border: 1px solid var(--line-strong);
+  border-radius: 999px;
+  background: var(--paper-raised);
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+}
+ul.systems li::marker { content: ""; }
+.systems__note {
+  margin: var(--s3) 0 0;
+  max-width: 70ch;
+  font-size: 13px;
+  line-height: 1.6;
+  color: var(--ink-faint);
+}
