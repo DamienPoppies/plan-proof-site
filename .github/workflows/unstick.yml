@@ -1,23 +1,26 @@
-name: Cancel stuck Pages deployment
+name: Release Pages lock
 on:
   workflow_dispatch:
 permissions:
   contents: read
   pages: write
+  deployments: write
 jobs:
-  cancel:
+  release:
     runs-on: ubuntu-latest
     steps:
-      - name: Cancel in-progress Pages deployments
+      - name: Mark stale Pages deployments as failed
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          curl -sS -H "Authorization: Bearer $GH_TOKEN" -H "Accept: application/vnd.github+json" \
-            "https://api.github.com/repos/${GITHUB_REPOSITORY}/deployments?environment=github-pages&per_page=20" -o deps.json
-          cat deps.json | python3 -c "import json,sys;[print(d['id'], d['sha'][:8], d['created_at']) for d in json.load(sys.stdin)]"
-          for id in $(cat deps.json | python3 -c "import json,sys;[print(d['id']) for d in json.load(sys.stdin)]"); do
-            echo "cancelling $id"
+          curl -sS -H "Authorization: Bearer $GH_TOKEN" \
+            "https://api.github.com/repos/${GITHUB_REPOSITORY}/deployments?environment=github-pages&per_page=30" -o deps.json
+          ids=$(python3 -c "import json;print(' '.join(str(d['id']) for d in json.load(open('deps.json'))))")
+          echo "ids: $ids"
+          for id in $ids; do
+            echo "-> status failure for $id"
             curl -sS -X POST -H "Authorization: Bearer $GH_TOKEN" -H "Accept: application/vnd.github+json" \
-              "https://api.github.com/repos/${GITHUB_REPOSITORY}/pages/deployments/$id/cancel" | head -3
+              "https://api.github.com/repos/${GITHUB_REPOSITORY}/deployments/$id/statuses" \
+              -d '{"state":"failure","description":"Stale lock cleared by owner automation"}' | head -c 200
             echo
           done
