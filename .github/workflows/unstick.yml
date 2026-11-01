@@ -1,26 +1,35 @@
-name: Release Pages lock
+name: Clear Pages deployment lock
 on:
   workflow_dispatch:
 permissions:
   contents: read
   pages: write
-  deployments: write
 jobs:
-  release:
+  clear:
     runs-on: ubuntu-latest
     steps:
-      - name: Mark stale Pages deployments as failed
+      - name: Inspect and cancel Pages deployments
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          curl -sS -H "Authorization: Bearer $GH_TOKEN" \
-            "https://api.github.com/repos/${GITHUB_REPOSITORY}/deployments?environment=github-pages&per_page=30" -o deps.json
-          ids=$(python3 -c "import json;print(' '.join(str(d['id']) for d in json.load(open('deps.json'))))")
-          echo "ids: $ids"
+          API="https://api.github.com/repos/${GITHUB_REPOSITORY}"
+          echo "== list pages deployments =="
+          curl -sS -H "Authorization: Bearer $GH_TOKEN" "$API/pages/deployments" -o pages.json
+          head -c 800 pages.json; echo
+          ids=$(python3 -c "
+import json
+try:
+    data = json.load(open('pages.json'))
+except Exception:
+    print(''); raise SystemExit
+if isinstance(data, list):
+    print(' '.join(str(d.get('id')) for d in data))
+else:
+    print('')
+")
+          echo "candidate ids: $ids"
           for id in $ids; do
-            echo "-> status failure for $id"
-            curl -sS -X POST -H "Authorization: Bearer $GH_TOKEN" -H "Accept: application/vnd.github+json" \
-              "https://api.github.com/repos/${GITHUB_REPOSITORY}/deployments/$id/statuses" \
-              -d '{"state":"failure","description":"Stale lock cleared by owner automation"}' | head -c 200
-            echo
+            echo "-> cancelling pages deployment $id"
+            curl -sS -X POST -H "Authorization: Bearer $GH_TOKEN" \
+              "$API/pages/deployments/$id/cancel" | head -c 300; echo
           done
