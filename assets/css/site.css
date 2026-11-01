@@ -2678,3 +2678,55 @@ code {
   .money__price { text-align: left; }
 }
 .money__mark { color: var(--accent); font-weight: 600; }
+
+/* Typical cost bands — sits under the money ledger. */
+.bands {
+  margin-top: var(--s5);
+  padding-top: var(--s3);
+  border-top: 1px solid var(--line);
+}
+.bands__title {
+  margin: 0 0 var(--s2);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+}
+.bands__row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 190px;
+  gap: var(--s3);
+  align-items: baseline;
+  padding: 14px 0;
+  border-bottom: 1px solid var(--line);
+}
+.bands__what { color: var(--ink-soft); }
+.bands__range {
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  text-align: right;
+  color: var(--ink);
+  white-space: nowrap;
+}
+.bands__note {
+  margin: var(--s2) 0 0;
+  max-width: 68ch;
+  font-size: 13px;
+  line-height: 1.6;
+  color: var(--ink-faint);
+}
+@media (max-width: 760px) {
+  .bands__row { grid-template-columns: 1fr; gap: 4px; }
+  .bands__range { text-align: left; }
+}
+.link-arrow {
+  display: inline-flex;
+  gap: 8px;
+  align-items: center;
+  font-weight: 600;
+  border-bottom: 1px solid currentColor;
+  padding-bottom: 2px;
+  text-decoration: none;
+}
+.link-arrow::after { content: "→"; }
