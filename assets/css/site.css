@@ -2768,3 +2768,14 @@ code {
 @media (min-width: 860px) {
   .families { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--s4); }
 }
+
+/* Hero addendum — the range of work, said early and quietly. */
+.hero-also {
+  margin: var(--s3) 0 0;
+  max-width: 52ch;
+  padding-left: 14px;
+  border-left: 2px solid var(--accent-soft);
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--ink-soft);
+}
