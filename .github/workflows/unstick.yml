@@ -1,0 +1,28 @@
+name: Cancel stuck Pages deployment
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+  pages: write
+jobs:
+  cancel:
+    runs-on: ubuntu-latest
+    steps:
+      - name: List and cancel in-progress Pages deployments
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          set -x
+          curl -sS -H "Authorization: Bearer $GH_TOKEN" -H "Accept: application/vnd.github+json" \
+            "https://api.github.com/repos/${GITHUB_REPOSITORY}/deployments?environment=github-pages&per_page=20" -o deps.json
+          python3 - <<'PY'
+          import json
+          for d in json.load(open('deps.json')):
+              print(d['id'], d['sha'][:8], d['created_at'])
+          PY
+          for id in $(python3 -c "import json;[print(d['id']) for d in json.load(open('deps.json'))]"); do
+            echo "cancelling $id"
+            curl -sS -X POST -H "Authorization: Bearer $GH_TOKEN" -H "Accept: application/vnd.github+json" \
+              "https://api.github.com/repos/${GITHUB_REPOSITORY}/pages/deployments/$id/cancel" | head -3
+            echo
+          done
