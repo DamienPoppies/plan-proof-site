@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="en-AU">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Booking concept — Plan &amp; Proof</title>
+    <meta name="description" content="A concept booking flow for review. Nothing is booked, sent or stored." />
+    <meta name="robots" content="noindex, nofollow, noarchive, nosnippet" />
+    <meta name="theme-color" content="#ffffff" />
+    <link rel="icon" href="../favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="../assets/css/site.css" />
+  </head>
+  <body class="landing">
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <div class="concept-ribbon">
+      <span><strong>Concept only</strong> &mdash; nothing is booked, nothing is sent, nothing is stored.</span>
+    </div>
+
+    <header class="site-header">
+      <div class="shell header-inner">
+        <a class="brand" href="../index.html" aria-label="Plan and Proof — home">
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M4.75 3.5v17" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" />
+            <path d="M8.75 15.1 12.3 18.4 19.4 6.6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
+          </svg>
+          Plan &amp; Proof
+        </a>
+        <a class="lp-note" href="../index.html">&larr; Back to the site</a>
+      </div>
+    </header>
+
+    <main id="main">
+      <section class="lp-hero" style="border-bottom: 0; padding-bottom: 0">
+        <div class="shell book-shell">
+          <p class="eyebrow">Free 30-minute call</p>
+          <h1>Pick a time. Bring one job.</h1>
+          <p class="lp-lede">
+            Thirty minutes to talk through the thing that keeps landing back on your desk, decide whether
+            it is worth building, and what it would cost.
+          </p>
+
+          <div class="booking" data-booking-concept>
+            <div class="booking__steps" aria-hidden="true">
+              <span class="is-on">1 &middot; Time</span>
+              <span>2 &middot; About you</span>
+              <span>3 &middot; Confirmed</span>
+            </div>
+
+            <div data-step="1">
+              <h2 class="booking__h">Choose a day</h2>
+              <p class="booking__sub">Times shown in your own timezone. Calls run 30 minutes with a 15-minute gap.</p>
+              <div class="days" data-days role="group" aria-label="Available days"></div>
+              <div class="slots-wrap">
+                <h3 class="booking__h3" data-slot-title>Pick a day</h3>
+                <div class="slots" data-slots role="group" aria-label="Available times"></div>
+              </div>
+            </div>
+
+            <div data-step="2" hidden>
+              <h2 class="booking__h">Almost done</h2>
+              <p class="booking__sub">You are holding <strong data-summary></strong>. Nothing is booked until you confirm.</p>
+              <p class="form-warn" data-warn hidden>Add your name and email so the confirmation can reach you.</p>
+              <form class="bc-form" novalidate>
+                <label for="bc-name">Your name</label>
+                <input id="bc-name" name="name" type="text" autocomplete="off" placeholder="Sam Whitfield" />
+
+                <label for="bc-email">Email</label>
+                <input id="bc-email" name="email" type="email" autocomplete="off" placeholder="sam@example.com" />
+
+                <label for="bc-trade">What kind of work</label>
+                <select id="bc-trade" name="trade">
+                  <option>Plumbing</option>
+                  <option>Carpentry / framing</option>
+                  <option>Concreting</option>
+                  <option>Electrical</option>
+                  <option>Other trade</option>
+                  <option>Not a trade business</option>
+                </select>
+
+                <label for="bc-job">The job that keeps coming back <span class="bc-opt">(optional)</span></label>
+                <textarea id="bc-job" name="job" rows="3" placeholder="Quoting extensions takes me two nights a week"></textarea>
+
+                <div class="bc-actions">
+                  <button class="btn" type="submit" data-confirm>Confirm this time</button>
+                  <button class="btn btn--quiet" type="button" data-back>Pick another time</button>
+                </div>
+              </form>
+            </div>
+
+            <div data-step="3" hidden>
+              <div class="bc-done">
+                <span class="bc-tick" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none">
+                    <path d="M4 12.5 9.5 18 20 6.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                  </svg>
+                </span>
+                <h2 class="booking__h">That is the flow, <span data-done-name>Sam</span>.</h2>
+                <p class="booking__sub">
+                  In a working version you would now get an email confirming
+                  <strong data-done-when></strong>, a calendar invitation, and a reminder the day before.
+                  The page would also tell me what to prepare for <em data-done-job></em>.
+                </p>
+                <p class="bc-fine">
+                  This is a concept. No email was sent, no calendar was touched, and nothing you typed was
+                  stored or transmitted anywhere.
+                </p>
+                <button class="btn btn--quiet" type="button" data-reset>Run it again</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="deliverables" style="margin-top: var(--s6)">
+            <div class="deliverable">
+              <span class="deliverable__label">Before</span>
+              <h2>Two minutes of prep</h2>
+              <p>Which job keeps coming back, and who else touches it.</p>
+            </div>
+            <div class="deliverable">
+              <span class="deliverable__label">During</span>
+              <h2>Thirty minutes</h2>
+              <p>Video or phone. One job, how it runs now, and a straight answer.</p>
+            </div>
+            <div class="deliverable">
+              <span class="deliverable__label">After</span>
+              <h2>One page in 24 hours</h2>
+              <p>The job, the first version and a fixed price. Yours to keep.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="shell">
+        <div class="footer-fine" style="margin-top: 0; border-top: 0; padding-top: 0">
+          <span>Plan &amp; Proof is a working name.</span>
+          <span>No tracking, no cookies, no forms.</span>
+        </div>
+      </div>
+    </footer>
+
+    <script src="../assets/js/booking-concept.js" defer></script>
+  </body>
+</html>

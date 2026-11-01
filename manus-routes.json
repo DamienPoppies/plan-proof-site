@@ -1,20 +1,84 @@
 {
   "routes": [
-    { "path": "/", "title": "Plan & Proof" },
-    { "path": "/quote-automation-for-trades/", "title": "Trade quote automation" },
-    { "path": "/ai-automation-for-tradies/", "title": "AI automation for tradies" },
-    { "path": "/custom-ai-tools-small-business/", "title": "Custom AI tools for small business" },
-    { "path": "/follow-up-automation-trades/", "title": "Follow-up automation for trades" },
-    { "path": "/how-it-works/", "title": "How it works" },
-    { "path": "/work/", "title": "Examples" },
-    { "path": "/about/", "title": "About" },
-    { "path": "/book/", "title": "Book a call" },
-    { "path": "/session/", "title": "Free session" },
-    { "path": "/lp/quotes/", "title": "Quote automation landing page" },
-    { "path": "/lp/spreadsheet/", "title": "Spreadsheet landing page" },
-    { "path": "/lp/ai-tools/", "title": "AI tools landing page" },
-    { "path": "/lp/advice/", "title": "Advice landing page" },
-    { "path": "/hooks/", "title": "Headline review" },
-    { "path": "/home-original/", "title": "Original home reference" }
+    {
+      "path": "/",
+      "title": "Plan & Proof"
+    },
+    {
+      "path": "/quote-automation-for-trades/",
+      "title": "Trade quote automation"
+    },
+    {
+      "path": "/ai-automation-for-tradies/",
+      "title": "AI automation for tradies"
+    },
+    {
+      "path": "/custom-ai-tools-small-business/",
+      "title": "Custom AI tools for small business"
+    },
+    {
+      "path": "/follow-up-automation-trades/",
+      "title": "Follow-up automation for trades"
+    },
+    {
+      "path": "/how-it-works/",
+      "title": "How it works"
+    },
+    {
+      "path": "/work/",
+      "title": "Examples"
+    },
+    {
+      "path": "/about/",
+      "title": "About"
+    },
+    {
+      "path": "/book/",
+      "title": "Book a call"
+    },
+    {
+      "path": "/session/",
+      "title": "Free session"
+    },
+    {
+      "path": "/lp/quotes/",
+      "title": "Quote automation landing page"
+    },
+    {
+      "path": "/lp/spreadsheet/",
+      "title": "Spreadsheet landing page"
+    },
+    {
+      "path": "/lp/ai-tools/",
+      "title": "AI tools landing page"
+    },
+    {
+      "path": "/lp/advice/",
+      "title": "Advice landing page"
+    },
+    {
+      "path": "/hooks/",
+      "title": "Headline review"
+    },
+    {
+      "path": "/home-original/",
+      "title": "Original home reference"
+    },
+    {
+      "path": "/lp/plumber/",
+      "title": "Plumber landing page"
+    },
+    {
+      "path": "/lp/carpenter/",
+      "title": "Carpenter landing page"
+    },
+    {
+      "path": "/lp/concreter/",
+      "title": "Concreter landing page"
+    },
+    {
+      "path": "/book-concept/",
+      "title": "Booking concept"
+    }
   ]
 }
